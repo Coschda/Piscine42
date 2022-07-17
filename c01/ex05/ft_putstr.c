@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:42:59 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 08:54:04 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/16 18:28:34 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/17 08:54:35 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int	tempa;
-	int	tempb;
+#include <unistd.h>
 
-	tempa = *a;
-	tempb = *b;
-	*a = tempa / tempb;
-	*b = tempa % tempb;
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

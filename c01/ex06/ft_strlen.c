@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:42:59 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 08:54:04 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/16 19:01:12 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/17 08:33:00 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_strlen(char *str)
 {
-	int	tempa;
-	int	tempb;
+	int	i;
 
-	tempa = *a;
-	tempb = *b;
-	*a = tempa / tempb;
-	*b = tempa % tempb;
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }

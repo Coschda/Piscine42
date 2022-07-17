@@ -1,21 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:42:59 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 08:54:04 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/16 19:48:23 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/17 09:46:21 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ultimate_div_mod(int *a, int *b)
+void	swap(int *a, int *b)
 {
-	int	tempa;
-	int	tempb;
+	int	temp;
 
-	tempa = *a;
-	tempb = *b;
-	*a = tempa / tempb;
-	*b = tempa % tempb;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int	find_max(int *tab, int size)
+{
+	int	i;
+	int	tmax;
+
+	i = 0;
+	tmax = 0;
+	while (i < size)
+	{
+		if (tab[tmax] < tab[i])
+			tmax = i;
+		i++;
+	}
+	return (tmax);
+}
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	tmax;
+
+	while (size > 0)
+	{
+		tmax = find_max(tab, size);
+		swap(&tab[tmax], &tab[size - 1]);
+		size--;
+	}
 }
