@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_strmcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:58:30 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 12:10:25 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/17 11:34:17 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/17 11:43:46 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_comb2(void)
+char	*ft_strncpy(char *dest, char *src, unsigned	int	n)
 {
-	int		a;
-	int		b;
-	char	d;
+	unsigned	int	i;
 
-	b = 0;
-	while (b < 99)
+	i = 0;
+	while (src[i] && i < n)
 	{
-		while (a < 99)
-		{
-			a++;
-			d = '0' + b / 10;
-			write(1, &d, 1);
-			d = '0' + b % 10;
-			write(1, &d, 1);
-			write(1, " ", 1);
-			d = '0' + a / 10;
-			write(1, &d, 1);
-			d = '0' + a % 10;
-			write(1, &d, 1);
-			if (!(a == 99 && b == 98))
-				write(1, ", ", 2);
-		}
-		a = ++b;
-	}	
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 int main()
 {
-	ft_print_comb2();
+	
 }

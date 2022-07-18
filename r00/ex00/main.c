@@ -6,13 +6,13 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:01:00 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/16 13:17:01 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/17 16:22:15 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	rush03(int x, int y);
+void	rush(int x, int y);
 
 int	main(void)
 {
-	rush03(123, 42);
+	rush(5,5);
 	return (0);
 }
