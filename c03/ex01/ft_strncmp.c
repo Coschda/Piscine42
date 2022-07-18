@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 11:35:00 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 15:23:07 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/18 15:30:16 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-int	ft_str_is_printable(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int	i;
-	int	is_print;
 
 	i = 0;
-	is_print = 1;
-	while (str[i])
-	{
-		if (' ' <= str[i] && str[i] <= '~')
-		{
-			is_print *= 1;
-		}
-		else
-			is_print *= 0;
+	while (s1[i] && s1[i] == s2[i] && i < n -1)
 		i++;
-	}
-	return (is_print);
+	return (s1[i] - s2[i]);
 }

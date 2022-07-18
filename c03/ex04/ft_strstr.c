@@ -1,32 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 11:35:00 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 17:20:51 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/18 17:57:15 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <string.h>
 
-int	ft_str_is_printable(char *str)
+int	ft_strlen(char	*s)
 {
+	int	len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int	len;
+	int	wc;
 	int	i;
-	int	is_print;
+	int	j;
 
 	i = 0;
-	is_print = 1;
+	len = ft_strlen(to_find);
+	printf("%d\n", len);
+	if (len == 0)
+		return (str);
 	while (str[i])
 	{
-		if (' ' <= str[i] && str[i] <= '~')
+		wc = 0;
+		if (str[i] == to_find[wc])
 		{
-			is_print *= 1;
+			j = i;
+			while (str[j++] == to_find[wc])
+			{
+				if (wc++ == len -1)
+					return (&str[i]);
+			}
 		}
-		else
-			is_print *= 0;
 		i++;
 	}
-	return (is_print);
+	return (0);
 }

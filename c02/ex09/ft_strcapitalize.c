@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 11:35:00 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 12:30:08 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/18 13:18:45 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-int	ft_str_is_printable(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int	i;
-	int	is_print;
+	int		wc;
+	char	*st;
 
-	i = 0;
-	is_print = 1;
-	while (str[i])
+	wc = 0;
+	st = str;
+	while (*st)
 	{
-		if (' ' <= str[i] && str[i] <= '~')
-		{
-			is_print *= 1;
-		}
+		if (wc == 0 && 'a' <= *st && *st <= 'z')
+			*st -= 32;
+		if (wc != 0 && 'A' <= *st && *st <= 'Z')
+			*st += 32;
+		if (*st == ' ' || *st == '-' || *st == '+')
+			wc = 0;
 		else
-			is_print *= 0;
-		i++;
+			wc++;
+		st++;
 	}
-	return (is_print);
+	return (str);
 }

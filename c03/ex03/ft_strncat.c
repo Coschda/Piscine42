@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 11:35:00 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 16:48:59 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/18 16:57:55 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <string.h>
 
-int	ft_str_is_printable(char *str)
+int	ft_strlen(char *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	i;
-	int	is_print;
+	int	j;
 
-	i = 0;
-	is_print = 1;
-	while (str[i])
+	i = ft_strlen(dest);
+	j = 0;
+	while(src[j] && j < nb)
 	{
-		if (' ' <= str[i] && str[i] <= '~')
-		{
-			is_print *= 1;
-		}
-		else
-			is_print *= 0;
+		dest [i] = src[j];
 		i++;
+		j++;
 	}
-	return (is_print);
+	return (dest);
 }
