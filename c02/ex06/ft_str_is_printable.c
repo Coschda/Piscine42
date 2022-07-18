@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 11:34:17 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 07:48:15 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/18 10:10:51 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+int main()
+{
+	printf("%c", 127);
 }
