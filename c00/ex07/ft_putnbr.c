@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:11:35 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 17:58:15 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/18 07:35:04 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -30,7 +30,6 @@ void	int_in_str(char *str, int nb)
 
 	len = lenint(nb)-1;
 	i = 0;
-
 	while (len >= 0)
 	{
 		str[len] = '0' + nb % 10;
@@ -41,30 +40,24 @@ void	int_in_str(char *str, int nb)
 
 void	ft_putnbr(int nb)
 {
-	char	txt[lenint(nb)];
-	int	i;
+	char	txt[11];
+	int		i;
 
 	i = 0;
-	if (nb < 0){
-		write(1,"-",1);
-		nb = -nb;	
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
 	}
-
 	if (nb == -2147483648)
 	{
-		write(1,"2147483648", 10);
+		write(1, "2147483648", 10);
 		return ;
 	}
-
 	int_in_str(txt, nb);
-
 	while (i < lenint(nb))
 	{
-		write(1,&txt[i],1);
+		write(1, &txt[i], 1);
 		i++;
 	}
-}
-int	main()
-{
-	ft_putnbr(-2147483648);
 }
