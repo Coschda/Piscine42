@@ -6,28 +6,55 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:16:06 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/19 14:21:27 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/19 19:30:09 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	check(char *base, int len)
 {
-	write(1, &c, 1);
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (len <= 1)
+		return (1);
+	while (base[i] != '\0')
+	{
+		while (base[j])
+		{
+			if (base[i] == base[j])
+			{
+				if (i != j || base[j] == '+' || base[j] == '-')
+					return (1);
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (0);
 }
 
-int	revint(int nb)
+void	check_neg(int *nbr)
 {
-	int	rep;
-
-	rep = 0;
-	while (nb > 0)
+	if (*nbr < 0)
 	{
-		rep = rep * 10 + (nb % 10);
-		nb = nb / 10;
+		write(1, "-", 1);
+		*nbr = -*nbr;
 	}
-	return rep;
+}
+
+void	reverse_write(int nb, int base_len, char *base)
+{
+	int	n;
+
+	n = nb / base_len;
+	if (n != 0)
+		reverse_write(n, base_len, base);
+	write(1, &base[nb % base_len], 1);
 }
 
 int	ft_strlen(char *str)
@@ -47,17 +74,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	int		len;
 
 	len = ft_strlen(base);
-	while (nbr > len)
-	{
-		ft_putchar(base[nbr % len]);
-		nbr = nbr / len;
-	}
-	ft_putchar(base[nbr % len]);
-}
-int	main()
-{
-	int	a;
-
-	a = 184;
-	ft_putnbr_base(a, "0123456789ABCDEF");
+	if (check(base, len))
+		return ;
+	check_neg(&nbr);
+	reverse_write(nbr, len, base);
 }
