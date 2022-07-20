@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 13:21:10 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 10:20:09 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 16:49:07 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *str)
@@ -31,6 +31,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (size > 0)
+		dest[i] = '\0';
 	return (ft_strlen(src));
 }

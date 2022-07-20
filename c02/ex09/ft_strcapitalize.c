@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 12:30:08 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 10:19:30 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 16:47:07 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strcapitalize(char *str)
@@ -29,5 +29,5 @@ char	*ft_strcapitalize(char *str)
 			wc++;
 		st++;
 	}
-	return (str);
+	return (st);
 }
