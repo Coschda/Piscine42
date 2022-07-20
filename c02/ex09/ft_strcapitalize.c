@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 12:30:08 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 09:49:34 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 10:19:30 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strcapitalize(char *str)
@@ -18,12 +18,12 @@ char	*ft_strcapitalize(char *str)
 	st = str;
 	while (*st)
 	{
-		if (wc == 0 && 'a' <= *st && *st <= 'z')
+		if ((wc == 0) && ('a' <= *st && *st <= 'z'))
 			*st -= 32;
-		if (wc != 0 && 'A' <= *st && *st <= 'Z')
+		if ((wc != 0) && ('A' <= *st && *st <= 'Z'))
 			*st += 32;
-		if (!('a' <= *st && *st <= 'z'
-				|| 'A' <= *st && *st <= 'Z'))
+		if (!(('a' <= *st && *st <= 'z')
+				|| ('A' <= *st && *st <= 'Z')))
 			wc = 0;
 		else
 			wc++;

@@ -6,12 +6,12 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 06:49:45 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 07:56:50 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 10:35:19 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	smallest_sqrt(int nb)
+int	ft_smallest_sqrt(int nb)
 {
 	int	i;
 	int	odd;
@@ -42,24 +42,11 @@ int	ft_is_prime(int nb)
 	if (n % 2 == 0 || n == 1 || n == 0 || n < 0)
 		return (0);
 	i = 3;
-	while (i < smallest_sqrt(n))
+	while (i < ft_smallest_sqrt(n))
 	{
 		if (n % i == 0)
 			return (0);
 		i++;
 	}
 	return (1);
-}
-
-int	main(void)
-{
-	int	i;
-
-	i = 0;
-	while (i < 1001)
-	{
-		if (ft_is_prime(i))
-			printf("%d %d\n", i, ft_is_prime(i));
-		i++;
-	}
 }

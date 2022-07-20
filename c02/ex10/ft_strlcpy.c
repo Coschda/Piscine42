@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 13:21:10 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 09:52:00 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 10:20:09 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *str)
@@ -23,7 +23,7 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < size - 1)

@@ -6,9 +6,12 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 15:08:52 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 15:22:20 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 10:04:11 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
