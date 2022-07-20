@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:25:48 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/17 16:25:07 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 09:58:48 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 void	ft_putchar(char c);
@@ -25,7 +25,7 @@ void	rush(int x, int y)
 		{
 			if (i == 0)
 				border(x);
-			else if (i == y - 1 )
+			else if (i == y - 1)
 				border2(x);
 			else if (y != 0)
 				middle(x);

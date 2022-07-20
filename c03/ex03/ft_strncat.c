@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 16:48:59 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 16:57:55 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 09:52:38 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -29,7 +29,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	i = ft_strlen(dest);
 	j = 0;
-	while(src[j] && j < nb)
+	while (src[j] && j < nb)
 	{
 		dest [i] = src[j];
 		i++;

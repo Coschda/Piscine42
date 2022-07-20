@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:01:00 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 09:57:56 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/19 19:53:40 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/19 20:00:31 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	rush(int x, int y);
+#include <stdio.h>
 
-int	main(void)
+int	ft_iterative_power(int nb, int power)
 {
-	rush(5, 5);
-	return (0);
+	int	i;
+	int	rep;
+
+	i = 0;
+	rep = 1;
+	if (power < 0)
+		return (0);
+	while (power > 0)
+	{
+		rep = nb * rep;
+		power--;
+	}
+	return (rep);
 }

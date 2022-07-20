@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:34:17 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 07:48:15 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 09:23:09 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strncpy(char *dest, char *src, unsigned int n)

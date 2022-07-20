@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:01:00 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 09:57:56 by mdoumi           ###   ########.fr       */
+/*   Created: 2022/07/18 11:35:58 by mdoumi            #+#    #+#             */
+/*   Updated: 2022/07/20 09:39:17 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	rush(int x, int y);
+#include <stdio.h>
 
-int	main(void)
+char	*ft_strupcase(char *str)
 {
-	rush(5, 5);
-	return (0);
+	int	decal;
+	int	i;
+
+	decal = 'a' - 'A';
+	i = 0;
+	while (str[i])
+	{
+		if ('a' <= str[i] && str[i] <= 'z')
+			str[i] -= decal;
+		i++;
+	}
+	return (str);
+}
+
+int	main()
+{
+	char b[] = "wdoushj";
+	printf("%s", ft_strupcase(b));
 }

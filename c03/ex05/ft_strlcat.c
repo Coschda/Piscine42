@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:58:03 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 20:00:29 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 09:55:04 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -37,29 +37,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	return (ft_strlen(dest));
 }
-
-int	main()
-{
-	char a[50] = "Ohaiuoo";
-	char b[] = "Boomer";
-
-	int r = strlcat(a, b, 49);
-
-	puts(a);
-	printf("%d\n", r);
-
-	char c[50] = "Ohaiuoo";
-	char d[] = "Boomer";
-
-	int s = strlcat(c, d, 49);
-
-	puts(c);
-	printf("%d", s);
-
-
-}
-
-/*
-Takes : Receveur, Donneur, len autorisée de tout mais n'affecte que la concatenation.
-Return : len(a+b)
-*/

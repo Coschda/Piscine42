@@ -6,11 +6,9 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 09:45:53 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/18 11:35:00 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 09:29:38 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
 int	ft_str_is_printable(char *str)
 {
 	int	i;
@@ -20,12 +18,12 @@ int	ft_str_is_printable(char *str)
 	is_print = 1;
 	while (str[i])
 	{
-		if (' ' <= str[i] && str[i] <= '~')
+		if (str[i] < ' ' || str[i] == 127)
 		{
-			is_print *= 1;
+			is_print *= 0;
 		}
 		else
-			is_print *= 0;
+			is_print *= 1;
 		i++;
 	}
 	return (is_print);
