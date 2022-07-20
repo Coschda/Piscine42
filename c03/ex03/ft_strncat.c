@@ -6,7 +6,7 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 16:48:59 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 10:34:33 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 19:05:26 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -35,5 +35,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

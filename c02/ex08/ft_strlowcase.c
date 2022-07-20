@@ -6,10 +6,11 @@
 /*   By: mdoumi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 11:54:57 by mdoumi            #+#    #+#             */
-/*   Updated: 2022/07/20 16:46:09 by mdoumi           ###   ########.fr       */
+/*   Updated: 2022/07/20 17:11:32 by mdoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+
 char	*ft_strlowcase(char *str)
 {
 	int	decal;
