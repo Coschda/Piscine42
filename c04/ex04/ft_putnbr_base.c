@@ -38,7 +38,7 @@ int	check(char *base, int len)
 	return (0);
 }
 
-void	check_neg(int *nbr)
+void	check_neg(long int *nbr)
 {
 	if (*nbr < 0)
 	{
@@ -47,9 +47,9 @@ void	check_neg(int *nbr)
 	}
 }
 
-void	reverse_write(int nb, int base_len, char *base)
+void	reverse_write(long int nb, int base_len, char *base)
 {
-	int	n;
+	long int	n;
 
 	n = nb / base_len;
 	if (n != 0)
@@ -71,11 +71,13 @@ int	ft_strlen(char *str)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int		len;
+	int			len;
+	long int	nb;
 
 	len = ft_strlen(base);
+	nb = (long int)nbr;
 	if (check(base, len))
 		return ;
-	check_neg(&nbr);
-	reverse_write(nbr, len, base);
+	check_neg(&nb);
+	reverse_write(nb, len, base);
 }

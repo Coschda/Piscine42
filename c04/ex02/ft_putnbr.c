@@ -10,30 +10,53 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
-
-void	ft_putchar(char c)
+int	lenint(int nbr)
 {
-	write(1, &c, 1);
+	if (nbr < 10)
+	{
+		return (1);
+	}
+	else
+	{
+		return (1 + lenint(nbr / 10));
+	}
+}
+
+void	int_in_str(char *str, int nb)
+{
+	int	i;
+	int	len;
+
+	len = lenint(nb)-1;
+	i = 0;
+	while (len >= 0)
+	{
+		str[len] = '0' + nb % 10;
+		nb = nb / 10;
+		len--;
+	}
 }
 
 void	ft_putnbr(int nb)
 {
-	int	nbr;
+	char	txt[11];
+	int		i;
 
+	i = 0;
 	if (nb < 0)
 	{
-		ft_putchar('-');
-		nbr = -nb;
+		write(1, "-", 1);
+		nb = -nb;
 	}
-	else
+	if (nb == -2147483648)
 	{
-		nbr = nb;
+		write(1, "2147483648", 10);
+		return ;
 	}
-	if (nbr >= 10)
+	int_in_str(txt, nb);
+	while (i < lenint(nb))
 	{
-		ft_putnbr(nbr / 10);
-		nbr = nbr % 10;
+		write(1, &txt[i], 1);
+		i++;
 	}
-	ft_putchar('0' + nbr);
 }

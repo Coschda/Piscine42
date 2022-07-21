@@ -61,3 +61,7 @@ void	ft_putnbr(int nb)
 		i++;
 	}
 }
+int main()
+{
+    ft_putnbr(-214783648);
+}
